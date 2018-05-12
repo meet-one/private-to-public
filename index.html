@@ -19,7 +19,7 @@
 
 <body>
   <div class="container">
-    <div class="query-container hide">
+    <div class="query-container">
       <div class="icon-wrapper">
         <div class="icon">
           <img src="./images/eos.png" alt="eos">
@@ -28,8 +28,7 @@
         <!-- <div class="title success">查询成功</div> -->
       </div>
       <div class="privary-wrapper">
-        <!-- <input type="text" name="privary" id="privary" placeholder="仅需在此处粘贴您的 EOS 私钥，即可查询公钥地址。"/> -->
-        <textarea name="primary" cols="30" rows="10" placeholder="仅需在此处粘贴您的 EOS 私钥，即可查询公钥地址。"></textarea> 
+        <textarea name="primary" id="primary" cols="30" rows="10" placeholder="仅需在此处粘贴您的 EOS 私钥，即可查询公钥地址。"></textarea>
       </div>
       <div class="confirm-wrapper">
         <input type="checkbox" name="confirm-1" id="confirm-1">
@@ -46,34 +45,75 @@
       </div>
     </div>
 
-    <div class="result-container">
+    <div class="result-container hide">
       <div class="icon-wrapper">
         <div class="icon">
           <img src="./images/success.png" alt="">
         </div>
         <div class="title success">查询成功</div>
       </div>
-
       <div class="tips">
         您的私钥对应以下 EOS 公钥地址
       </div>
-
       <div class="result">
         <div class="title">EOS 公钥：</div>
-        <textarea class="textarea-result" name="primary" cols="30" rows="10"></textarea> 
+        <textarea class="textarea-result" name="primary" cols="30" rows="10"></textarea>
       </div>
       <div class="button-wrapper">
-        <button class="button" id="next" type="submit">下一步</button>
+        <button class="button" id="finish" type="submit">完成</button>
       </div>
     </div>
-
-    <!-- for footer -->
-    <div class="footer">
-      <img src="./images/footer-logo.png">
-    </div>
   </div>
-  <script>
+  <!-- for footer -->
+  <div class="footer">
+    <img src="./images/footer-logo.png">
+  </div>
 
+
+  <script src="./js/eosjs-ecc.js"></script>
+  <script>
+    (function() {
+      var next = document.getElementById('next');
+      var privary_key = document.getElementById('primary');
+      var confirm_ckb_1 = document.getElementById('confirm-1');
+      var confirm_ckb_2 = document.getElementById('confirm-2');
+      var result = '';
+      // 下一步按钮
+      next.addEventListener('click', function() {
+        var confirm_1 = confirm_ckb_1.checked;
+        var confirm_2 = confirm_ckb_2.checked;
+        if (confirm_1 && confirm_2) {
+          if (privary_key.value == '') {
+            alert('请输入EOS私钥地址');
+          } else {
+            if (eosjs_ecc.isValidPrivate(privary_key.value)) {
+              result = eosjs_ecc.privateToPublic(privary_key.value);
+              document.getElementsByClassName('query-container')[0].classList.add('hide');
+              document.getElementsByClassName('result-container')[0].classList.remove('hide');
+              document.getElementsByClassName('textarea-result')[0].value = result;
+            } else {
+              alert('私钥地址不合法，请重新输入');
+            }
+            // console.log(eosjs_ecc);
+            console.log(eosjs_ecc.privateToPublic('5J518KjtQ6BXhfR7C9VBCHNXx8gPC36jJd9NZtvy6AA5Pqacgp8'));
+            console.log(eosjs_ecc.isValidPublic('EOS89nqhePAogKBGTa7ent35yp3iYUh6z6yMVLRRx2KmnF5ixaWcy'));
+            console.log(eosjs_ecc.isValidPrivate('5J518KjtQ6BXhfR7C9VBCHNXx8gPC36jJd9NZtvy6AA5Pqacgp8'));
+          }
+        } else {
+          alert('请确认免责声明');
+        }
+      });
+      // 完成按钮
+      document.getElementById('finish').addEventListener('click', function() {
+        result = '';
+        privary_key.value = '';
+        confirm_ckb_1.checked = false;
+        confirm_ckb_2.checked = false;
+        document.getElementsByClassName('textarea-result')[0].value = '';
+        document.getElementsByClassName('query-container')[0].classList.remove('hide');
+        document.getElementsByClassName('result-container')[0].classList.add('hide');
+      });
+    }());
   </script>
 </body>
 

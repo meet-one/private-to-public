@@ -22,7 +22,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 80px 25px 0;
+  padding: 30px 25px 0;
 }
 
 .confirm-wrapper {
@@ -43,7 +43,7 @@ body {
   font-size: 24px;
   color: #454055;
   letter-spacing: 0;
-  text-align: center; 
+  text-align: center;
 }
 
 .icon-wrapper .title.success {
@@ -51,7 +51,7 @@ body {
 }
 
 .button-wrapper {
-  margin-top: 78px;
+  margin-top: 60px;
 }
 
 textarea {
@@ -76,7 +76,7 @@ input[type="text"] {
   background-color: #EEE;
   color: #323232;
   border: none;
-  outline:none;    
+  outline:none;
   border-radius: 2px;
 }
 
@@ -87,6 +87,7 @@ input[type="text"]::-webkit-input-placeholder {
 
 /* 按钮 */
 .button {
+  border: none;
   font-size: 16px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -105,10 +106,12 @@ input[type="text"]::-webkit-input-placeholder {
 
 /* footer style */
 .footer {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .footer img {
@@ -124,6 +127,7 @@ input[type=checkbox] + .checkbox-icon {
   background-repeat: no-repeat;
   height: 18px;
   width: 18px;
+  margin: -4.5px 0;
   display:inline-block;
 }
 input[type=checkbox]:checked + .checkbox-icon {
@@ -159,6 +163,7 @@ label.tips {
 
 .result-container .result .textarea-result {
   margin-top: 10px;
+  font-family: monospace;
   font-size: 16px;
   color: #323232;
   letter-spacing: 0;
