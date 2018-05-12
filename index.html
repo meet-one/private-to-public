@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta content="always" name="referrer">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,minimal-ui" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta content="telephone=no" name="format-detection" />
+  <title>EOS 公钥查询工具</title>
+  <link rel="stylesheet" href="./styles/reset.css"/>
+  <link rel="stylesheet" href="./styles/common.css"/>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="query-container hide">
+      <div class="icon-wrapper">
+        <div class="icon">
+          <img src="./images/eos.png" alt="eos">
+        </div>
+        <div class="title">查询公钥</div>
+        <!-- <div class="title success">查询成功</div> -->
+      </div>
+      <div class="privary-wrapper">
+        <!-- <input type="text" name="privary" id="privary" placeholder="仅需在此处粘贴您的 EOS 私钥，即可查询公钥地址。"/> -->
+        <textarea name="primary" cols="30" rows="10" placeholder="仅需在此处粘贴您的 EOS 私钥，即可查询公钥地址。"></textarea> 
+      </div>
+      <div class="confirm-wrapper">
+        <input type="checkbox" name="confirm-1" id="confirm-1">
+        <label class="checkbox-icon" for="confirm-1"></label>
+        <label class="tips" for="confirm-1">我将会在飞行模式下使用 EOS 公钥查询工具</label>
+      </div>
+      <div class="confirm-wrapper">
+        <input type="checkbox" name="confirm-2" id="confirm-2">
+        <label class="checkbox-icon" for="confirm-2"></label>
+        <label class="tips" for="confirm-2">我同意如果  EOS 私钥泄露与 MEET.ONE 无关</label>
+      </div>
+      <div class="button-wrapper">
+        <button class="button" id="next" type="submit">下一步</button>
+      </div>
+    </div>
+
+    <div class="result-container">
+      <div class="icon-wrapper">
+        <div class="icon">
+          <img src="./images/success.png" alt="">
+        </div>
+        <div class="title success">查询成功</div>
+      </div>
+
+      <div class="tips">
+        您的私钥对应以下 EOS 公钥地址
+      </div>
+
+      <div class="result">
+        <div class="title">EOS 公钥：</div>
+        <textarea class="textarea-result" name="primary" cols="30" rows="10"></textarea> 
+      </div>
+      <div class="button-wrapper">
+        <button class="button" id="next" type="submit">下一步</button>
+      </div>
+    </div>
+
+    <!-- for footer -->
+    <div class="footer">
+      <img src="./images/footer-logo.png">
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>
