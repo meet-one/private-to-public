@@ -169,3 +169,10 @@ label.tips {
   letter-spacing: 0;
   line-height: 20px;
 }
+
+.opensource{
+  display: block;
+  font-size:14px;
+  color: #323232;
+  margin-top:20px;
+}
