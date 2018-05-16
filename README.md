@@ -2,11 +2,13 @@
 
 ## Instructions
 
-`private-to-public` is a EOS tool to compute public key using primary key. It base on official open source code called the ECC function with native JS.
+`private-to-public` is a EOS tool to compute public key using private key. It base on official open source code called the ECC function with native JS.
 
 We decide to open the source code on Github in consideration of safe.
 
-Please confirm the Terms of use before using this tool. Although we won’t save or transmission the data, please Turn-on the flying mode for safety.
+Please confirm the Terms of use before using this tool. Although we won’t save or transmission the data, please turn your device to flying mode.
+
+Or you can clone this repository to you computer, and do whatever you want.
 
 It is forked from https://github.com/EOSIO/eosjs-ecc
 
