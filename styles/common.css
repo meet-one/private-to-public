@@ -106,12 +106,8 @@ input[type="text"]::-webkit-input-placeholder {
 
 /* footer style */
 .footer {
-  position: absolute;
-  left: 0;
-  bottom: -30px;
-  width: 100%;
   text-align: center;
-  margin-bottom: 40px;
+  margin: 60px auto 40px;
 }
 
 .footer img {
